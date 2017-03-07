@@ -58,13 +58,12 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             $("#holder").text(event.data.length);
             if(event.data.length == 0) return;
+
             event.data.sort(function(a, b) {
                 return a.height * a.width - b.height * b.width;
             });
 
-            var rect = event.data[0];
-
-            console.dir(event.data);
+            var rect = event.data[0]; //The rect with the largest area
             context.strokeStyle = rgb(r1, g1, b1);
             context.lineWidth = 4
             context.strokeRect(rect.x, rect.y, rect.width, rect.height);
